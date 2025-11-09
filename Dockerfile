@@ -25,11 +25,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY --from=build /app/package*.json ./
+COPY --from=build /app/*.json ./
+COPY --from=build /app/dist ./dist
 COPY --from=build /app/node_modules ./node_modules
 
 # Exponer el puerto donde correra la aplicacion
-EXPOSE 3000
+EXPOSE 4000
 
 # Ejecutar la aplicacion
-CMD [ "npm", "run start" ]
+CMD [ "npm", "run", "start:prod" ]
