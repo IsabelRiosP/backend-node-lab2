@@ -33,4 +33,4 @@ COPY --from=build /app/node_modules ./node_modules
 EXPOSE 4000
 
 # Ejecutar la aplicacion
-CMD [ "npm", "run", "start:prod" ]
+CMD [ "npm", "run", "start:prod" ]
